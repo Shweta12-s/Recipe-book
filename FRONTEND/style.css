@@ -1,0 +1,313 @@
+/* Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Georgia", serif;
+  background: #f7f9fc;
+  color: #333;
+  padding: 40px 20px;
+}
+
+.main-heading {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #1f2f46;
+  font-weight: 600;
+  border-bottom: 2px solid #e0e6ed;
+  padding-bottom: 10px;
+}
+
+/* Container */
+.recipes-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+  gap: 30px;
+  padding: 0 10px;
+}
+
+/* Recipe Card */
+.recipe-card {
+  background: #ffffff;
+  border: 1px solid #dce3ea;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+  transition: box-shadow 0.3s;
+}
+
+.recipe-card:hover {
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+  font-size: 1.8rem;
+  color: #1f2f46;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.dish-image {
+  width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+  height: 200px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+}
+
+/* Buttons */
+.toggle-btn,
+.start-btn {
+  background-color: #1f2f46;
+  color: #fff;
+  border: none;
+  padding: 12px;
+  font-size: 1rem;
+  margin-top: 10px;
+  width: 100%;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.toggle-btn:hover,
+.start-btn:hover {
+  background-color: #314b6e;
+}
+
+.start-btn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+  color: #555;
+}
+
+/* Hidden Sections */
+.hidden {
+  display: none;
+}
+
+/.ingredients-container,
+.steps-container {
+  margin-top: 15px;
+  background: #f4f6f9;
+  padding: 15px;
+  border-radius: 6px;
+  border-left: 4px solid #c7d0db;
+  animation: fadeIn 0.4s ease-in;
+}
+
+.ingredients li,
+.steps p {
+  padding: 4px 0;
+  line-height: 1.5;
+  font-size: 1rem;
+}
+
+/* Highlight Current Step */
+.step.highlight {
+  background-color: #fff9e6;
+  padding: 8px;
+  border-left: 4px solid #f4c542;
+  margin: 5px 0;
+  font-weight: 600;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Footer */
+footer {
+  margin-top: 40px;
+  text-align: center;
+  color: #888;
+  font-size: 0.9rem;
+}
+
+/* Responsive Fixes */
+@media (max-width: 500px) {
+  .main-heading {
+    font-size: 2rem;
+  }
+  .title {
+    font-size: 1.5rem;
+  }
+}
+
+.navbar {
+  background-color: #1f2f46;
+  color: white;
+  padding: 15px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+}
+
+.logo {
+  font-size: 1.6rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+  font-size: 1rem;
+  position: relative;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background: #f4c542;
+  left: 0;
+  bottom: -3px;
+  transition: 0.3s;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-links {
+    margin-top: 10px;
+  }
+
+  .nav-links a {
+    display: inline-block;
+    margin: 10px 10px 0 0;
+  }
+}
+.contact-section {
+  background-color: #fff8f0;
+  padding: 50px 20px;
+  text-align: center;
+  border-top: 2px solid #f3c3c7;
+}
+
+.contact-section h2 {
+  font-size: 2rem;
+  color: #5d2a42;
+  margin-bottom: 20px;
+}
+
+.contact-form {
+  max-width: 500px;
+  margin: auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.contact-form label {
+  display: block;
+  text-align: left;
+  margin-bottom: 6px;
+  font-weight: bold;
+  color: #444;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: #ff8b94;
+}
+
+.contact-form button {
+  background-color: #ff8b94;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.contact-form button:hover {
+  background-color: #ff6b7a;
+}
+#contact {
+  background-color: #fff8f0;
+  padding: 30px;
+  max-width: 500px;
+  margin: 50px auto;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#contact h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#contact form input,
+#contact form textarea {
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+#contact form button {
+  width: 100%;
+  padding: 12px;
+  background-color: #ff6f61;
+  color: white;
+  border: none;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+#contact form button:hover {
+  background-color: #ff3d34;
+}
+/* Add this to style.css */
+#successMessage {
+  color: green;
+  margin-top: 10px;
+  font-weight: bold;
+}
+.hidden {
+  display: none;
+}
